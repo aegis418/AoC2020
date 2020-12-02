@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 	"strconv"
 )
@@ -30,7 +31,7 @@ func part1() {
 	for i := 0; i < len(nums); i++ {
 		for j := 1; j < len(nums); j++ {
 			if nums[i]+nums[j] == 2020 {
-				println(nums[i] * nums[j])
+				fmt.Println(nums[i] * nums[j])
 				return
 			}
 		}
@@ -44,7 +45,7 @@ func part2() {
 		for j := 0; j < len(nums); j++ {
 			for k := 0; k < len(nums); k++ {
 				if nums[i]+nums[j]+nums[k] == 2020 {
-					println(nums[i] * nums[j] * nums[k])
+					fmt.Println(nums[i] * nums[j] * nums[k])
 					return
 				}
 			}
