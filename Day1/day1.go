@@ -10,6 +10,7 @@ import (
 func main() {
 	part1()
 	part2()
+	part2Other()
 }
 
 func processFile() []int {
@@ -39,6 +40,7 @@ func part1() {
 
 }
 
+// Fuck it we're doing it the easy way.
 func part2() {
 	nums := processFile()
 	for i := 0; i < len(nums); i++ {
@@ -52,4 +54,21 @@ func part2() {
 
 		}
 	}
+}
+
+// From reddit
+func part2Other() {
+	nums := processFile()
+	for _, n := range nums {
+		k := 2020 - n
+		m := map[int]bool{}
+		for _, e := range nums {
+			m[e] = true
+			if m[k-e] == true {
+				fmt.Println(n * e * (k - e))
+				return
+			}
+		}
+	}
+
 }
