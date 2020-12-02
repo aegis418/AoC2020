@@ -14,6 +14,7 @@ func main() {
 func processFile() []int {
 	nums := make([]int, 0)
 	file, _ := os.Open("input")
+	defer file.Close()
 	s := bufio.NewScanner(file)
 
 	for s.Scan() {
